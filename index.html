@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile App with Skills Tag Input</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="register-form" class="form-container">
+      <h2 class="title">Create Account</h2>
+      <input type="text" id="reg-name" placeholder="Full Name" required autocomplete="off" />
+      <input type="email" id="reg-email" placeholder="Email Address" required autocomplete="off" />
+      <input type="password" id="reg-password" placeholder="Password" required autocomplete="off" />
+      <button class="btn" onclick="register()">Register</button>
+      <p class="text">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+      <p id="reg-msg" class="msg"></p>
+    </div>
+
+    <div id="login-form" class="form-container" style="display:none;">
+      <h2 class="title">Welcome Back</h2>
+      <input type="email" id="login-email" placeholder="Email Address" required autocomplete="off" />
+      <input type="password" id="login-password" placeholder="Password" required autocomplete="off" />
+      <button class="btn" onclick="login()">Login</button>
+      <p class="text">Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+      <p id="login-msg" class="msg"></p>
+    </div>
+
+    <div id="profile" style="display:none; text-align: left;">
+      <h2 class="title">Welcome, <span id="profile-name"></span>!</h2>
+
+      <p><strong>Email:</strong> <span id="profile-email"></span></p>
+
+      <label for="profile-name-input"><b>Name</b></label>
+      <input type="text" id="profile-name-input" placeholder="Update Name" autocomplete="off" />
+
+      <label for="skills-input-container"><b>Skills</b></label>
+      <div id="skills-input-container">
+        <input type="text" id="skills-input" placeholder="Type skill and press Enter" autocomplete="off" />
+      </div>
+
+      <label for="profile-projects-input"><b>Projects (comma separated)</b></label>
+      <input type="text" id="profile-projects-input" placeholder="e.g. Portfolio, Blog" autocomplete="off" />
+
+      <button class="btn" onclick="updateProfile()">Update Profile</button>
+      <button class="btn btn-danger" onclick="deleteProfile()">Delete Profile</button>
+
+      <p id="profile-msg" class="msg"></p>
+
+      <button class="btn btn-logout" onclick="logout()">Logout</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
